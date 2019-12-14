@@ -1,0 +1,21 @@
+// stylelint-disable declaration-no-important
+
+// Contextual backgrounds
+
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: #3b5998 !important;
+  }
+  a#{$parent},
+  button#{$parent} {
+    @include hover-focus {
+      background-color: darken(#3b5998, 10%) !important;
+    }
+  }
+}
+
+@mixin bg-gradient-variant($parent, #3b5998) {
+  #{$parent} {
+    background: #3b5998 linear-gradient(180deg, mix($body-bg, $color, 15%), #3b5998) repeat-x !important;
+  }
+}
